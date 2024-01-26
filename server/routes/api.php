@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\CategoryController;
 use App\Http\Controllers\Api\V1\DocumentController;
+use App\Http\Controllers\Api\V1\APIController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +19,16 @@ use App\Http\Controllers\Api\V1\DocumentController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post("register", [ApiController::class, "register"]);
+Route::post("login", [ApiController::class, "login"]);
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::get("profile", [ApiController::class, "profile"]);
+    Route::get("refresh", [ApiController::class, "refreshToken"]);
+    Route::get("logout", [ApiController::class, "logout"]);
 });
 
-Route::group(['prefix' => 'v1', 'namespace'=> 'App\Http\Controllers\Api\V1'], function() {
+Route::group(['prefix' => 'v1', 'namespace'=> 'App\Http\Controllers\Api\V1', "middleware" => ["auth:api"]], function() {
     Route::apiResource('documents', DocumentController::class);
     Route::apiResource('categories', CategoryController::class);
     Route::apiResource('users', UserController::class);

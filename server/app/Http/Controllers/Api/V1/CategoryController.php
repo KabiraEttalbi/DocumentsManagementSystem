@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Category;
-use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Filters\V1\CategoriesFilter;
 use App\Http\Controllers\Controller;
