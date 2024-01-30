@@ -19,16 +19,16 @@ use App\Http\Controllers\Api\V1\APIController;
 |
 */
 
-Route::post("register", [ApiController::class, "register"]);
-Route::post("login", [ApiController::class, "login"]);
+// Route::post("register", [ApiController::class, "register"]);
+// Route::post("login", [ApiController::class, "login"]);
 
-Route::group(["middleware" => ["auth:api"]], function(){
-    Route::get("profile", [ApiController::class, "profile"]);
-    Route::get("refresh", [ApiController::class, "refreshToken"]);
-    Route::get("logout", [ApiController::class, "logout"]);
-});
+// Route::group(["middleware" => ["auth:api"]], function(){
+//     Route::get("profile", [ApiController::class, "profile"]);
+//     Route::get("refresh", [ApiController::class, "refreshToken"]);
+//     Route::get("logout", [ApiController::class, "logout"]);
+// });
 
-Route::group(['prefix' => 'v1', 'namespace'=> 'App\Http\Controllers\Api\V1', "middleware" => ["auth:api"]], function() {
+Route::group(['prefix' => 'v1', 'namespace'=> 'App\Http\Controllers\Api\V1'], function() {
     Route::apiResource('documents', DocumentController::class);
     Route::apiResource('categories', CategoryController::class);
     Route::apiResource('users', UserController::class);

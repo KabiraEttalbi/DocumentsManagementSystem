@@ -1,1 +1,30 @@
-<p>add-user works!</p>
+<div class="d-flex justify-content-center">
+  <div class="bg-light col-6 rounded p-4">
+    <div class=" h-100 p-4">
+      <h6 class="mb-4">Ajouter un utilisateur</h6>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom d'utilisateur</label>
+          <input type="text" class="form-control" id="name" aria-describedby="">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" aria-describedby="">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="password" aria-describedby="">
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Categories</label>
+            <select class="form-select mb-3" aria-label="Default select example" id="category">
+              <option disabled selected hidden>séléctionez des categories</option>
+              <option value="1">Documents administratif</option>
+              <option value="2">Supports pédagogiques</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+  </div>
+</div>

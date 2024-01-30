@@ -1,1 +1,33 @@
-<p>users-list works!</p>
+<div class="container-fluid pt-4 px-4">
+
+  <div class="bg-light text-center rounded p-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <a class="btn btn-sm btn-primary"  routerLink="add-user" ariaCurrentWhenActive="page"> <i class="bi bi-plus"></i> Ajouter un utilisateur </a>
+      <form class="d-none d-md-flex ms-4">
+        <input class="form-control border-0" type="search" placeholder="Search">
+      </form>
+    </div>
+    <div class="table-responsive">
+      <table class="table text-start align-middle table-light table-bordered table-hover mb-0">
+        <thead>
+          <tr class="text-dark">
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-secondary">1</td>
+            <td class="text-secondary">John Doe</td>
+            <td class="text-secondary">johndoe&#64;example.com</td>
+            <td><a class="btn btn-sm btn-primary"   routerLink="edit-user" ariaCurrentWhenActive="page"> <i class="bi bi-pencil-square"></i> Modifier</a></td>
+            <td><a class="btn btn-sm btn-primary" href=""> <i class="bi bi-trash"></i> Supprimer</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

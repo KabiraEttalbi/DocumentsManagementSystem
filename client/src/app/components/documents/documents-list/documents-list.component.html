@@ -1,1 +1,50 @@
-<p>documents-list works!</p>
+<div class="container-fluid pt-4 px-4">
+
+  <div class="bg-light text-center rounded p-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <a routerLink="add-document" ariaCurrentWhenActive="page" class="btn btn-sm btn-primary"><i
+          class="bi bi-plus"></i>
+        Ajouter un document </a>
+      <form class="d-none d-md-flex ms-4">
+        <input class="form-control border-0" type="search" placeholder="Search">
+      </form>
+    </div>
+    <div class="table-responsive">
+      <table class="table text-start align-middle table-light table-bordered table-hover mb-0">
+        <thead>
+          <tr class="text-dark">
+            <th scope="col">#</th>
+            <th scope="col">Nom du fichier</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">Télécharger</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-secondary">1</td>
+            <td class="text-secondary">Attestation d'assurance</td>
+            <td class="text-secondary">Documents administratif</td>
+            <td><a class="btn btn-sm btn-primary" href=""><i class="bi bi-file-earmark-arrow-down"></i> Télécharger</a>
+            </td>
+            <td><a class="btn btn-sm btn-primary" routerLink="edit-document" routerLinkActive="active"
+                ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a></td>
+            <td><a class="btn btn-sm btn-primary" href=""><i class="bi bi-archive"></i> Supprimer</a></td>
+          </tr>
+          <tr>
+            <td class="text-secondary">1</td>
+            <td class="text-secondary">Résumé partie-1 cours angular</td>
+            <td class="text-secondary">Supports pédagogique </td>
+            <td><a class="btn btn-sm btn-primary" href=""><i class="bi bi-file-earmark-arrow-down"></i> Télécharger</a>
+            </td>
+            <td><a class="btn btn-sm btn-primary" routerLink="edit-document" routerLinkActive="active"
+                ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a></td>
+            <td><a class="btn btn-sm btn-primary" href=""><i class="bi bi-archive"></i> Supprimer</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

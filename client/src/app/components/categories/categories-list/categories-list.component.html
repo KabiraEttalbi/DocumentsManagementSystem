@@ -1,1 +1,46 @@
-<p>categories-list works!</p>
+<div class="container-fluid pt-4 px-4">
+  <div class="bg-light text-center rounded p-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <a class="btn btn-sm btn-primary" routerLink="add-category" ariaCurrentWhenActive="page"><i class="bi bi-plus"></i> Ajouter une categorie
+      </a>
+      <form class="d-none d-md-flex ms-4">
+        <input class="form-control border-0" type="search" placeholder="Search" />
+      </form>
+    </div>
+    <div class="table-responsive">
+      <table class="table text-start table-light align-middle table-bordered table-hover mb-0">
+        <thead>
+          <tr class="text-dark">
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-secondary">1</td>
+            <td class="text-secondary">Documents administratif</td>
+            <td>
+              <a class="btn btn-sm btn-primary  " routerLink="edit-category" ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary"><i class="bi bi-trash"></i> Supprimer</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-secondary">2</td>
+            <td class="text-secondary">Supports pédagogiques</td>
+            <td>
+              <a class="btn btn-sm btn-primary  " routerLink="edit-category" ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary"><i class="bi bi-trash"></i> Supprimer</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

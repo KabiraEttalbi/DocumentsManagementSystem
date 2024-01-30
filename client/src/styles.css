@@ -1,3 +1,5 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
 /********** Template CSS **********/
 :root {
   --primary: #009CFF;
@@ -5,6 +7,9 @@
   --dark: #191C24;
 }
 
+body{
+  font-family: 'Roboto', sans-serif;
+}
 .back-to-top {
   position: fixed;
   display: none;
@@ -13,7 +18,9 @@
   z-index: 99;
 }
 
-
+.text-primary{
+  color: var(--primary) !important;
+}
 /*** Spinner ***/
 #spinner {
   opacity: 0;
@@ -64,7 +71,16 @@
   border-radius: 50px;
 }
 
+.btn-primary{
+  background-color: var(--primary) !important;
+  border: var(--primary) !important;
+}
 
+.btn-primary:hover{
+  background-color: #47b8ff !important;
+  border: #47b8ff !important;
+  color: white !important;
+}
 /*** Layout ***/
 .sidebar {
   position: fixed;
@@ -131,6 +147,9 @@
   outline: none;
 }
 
+.sidebar .navbar .navbar-brand {
+  color: var(--primary);
+}
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
   color: var(--primary);
@@ -180,6 +199,15 @@
   outline: none;
 }
 
+.content .navbar .sidebar-toggler {
+  color: var(--primary) !important;
+  text-decoration: none;
+}
+
+.content .navbar .sidebar-toggler:hover {
+  color: #006caf !important;
+}
+
 .content .navbar .navbar-nav .nav-link:hover,
 .content .navbar .navbar-nav .nav-link.active {
   color: var(--primary);
@@ -216,62 +244,3 @@
   }
 }
 
-
-/*** Date Picker ***/
-.bootstrap-datetimepicker-widget.bottom {
-  top: auto !important;
-}
-
-.bootstrap-datetimepicker-widget .table * {
-  border-bottom-width: 0px;
-}
-
-.bootstrap-datetimepicker-widget .table th {
-  font-weight: 500;
-}
-
-.bootstrap-datetimepicker-widget.dropdown-menu {
-  padding: 10px;
-  border-radius: 2px;
-}
-
-.bootstrap-datetimepicker-widget table td.active,
-.bootstrap-datetimepicker-widget table td.active:hover {
-  background: var(--primary);
-}
-
-.bootstrap-datetimepicker-widget table td.today::before {
-  border-bottom-color: var(--primary);
-}
-
-
-/*** Testimonial ***/
-.progress .progress-bar {
-  width: 0px;
-  transition: 2s;
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-dots {
-  margin-top: 24px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
-  position: relative;
-  display: inline-block;
-  margin: 0 5px;
-  width: 15px;
-  height: 15px;
-  border: 5px solid var(--primary);
-  border-radius: 15px;
-  transition: .5s;
-}
-
-.testimonial-carousel .owl-dot.active {
-  background: var(--dark);
-  border-color: var(--primary);
-}
