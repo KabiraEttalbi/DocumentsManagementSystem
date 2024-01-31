@@ -76,6 +76,27 @@ class DocumentController extends Controller
     }
 
     /**
+     * Download the specified resource.
+     */
+    public function download($document)
+    {
+        $file = new DocumentResource($document);
+
+        // Get the full path to the file
+        $filePath = public_path('files') . '/' . $file->file;
+
+        // Check if the file exists
+        if (file_exists($filePath)) {
+            // Return the file as a download response
+            return response()->download($filePath);
+        } else {
+            // If the file does not exist, you might want to handle it accordingly
+            return response()->json(['error' => 'File not found'], 404);
+        }
+    }
+
+
+    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateDocumentRequest $request, Document $document)

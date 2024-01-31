@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'categories', title: 'Categories', component: CategoriesComponent, children:[
     { path: 'categories-list', title: 'Categories', component: CategoriesListComponent },
     { path: 'add-category', title: 'Ajouter une catgorie', component: AddCategoryComponent },
-    { path: 'edit-category', title: 'modifier la categorie', component: EditCategoryComponent},
+    { path: 'edit-category/:id', title: 'modifier la categorie', component: EditCategoryComponent},
   ]},
   { path: 'users', title: 'Utilisateurs', component: UsersComponent, children:[
     { path: 'users', title: 'Utilisateurs', component: UsersListComponent },

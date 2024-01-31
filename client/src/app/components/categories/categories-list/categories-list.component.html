@@ -18,27 +18,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="text-secondary">1</td>
-            <td class="text-secondary">Documents administratif</td>
-            <td>
-              <a class="btn btn-sm btn-primary  " routerLink="edit-category" ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a>
-            </td>
-            <td>
-              <button class="btn btn-sm btn-primary"><i class="bi bi-trash"></i> Supprimer</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-secondary">2</td>
-            <td class="text-secondary">Supports pédagogiques</td>
-            <td>
-              <a class="btn btn-sm btn-primary  " routerLink="edit-category" ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a>
-            </td>
-            <td>
-              <button class="btn btn-sm btn-primary"><i class="bi bi-trash"></i> Supprimer</button>
-            </td>
-          </tr>
 
+          <tr *ngFor="let category of categories; let index = index">
+            <td class="text-secondary">{{category.id}}</td>
+            <td class="text-secondary">{{category.name}}</td>
+            <td>
+              <a class="btn btn-sm btn-primary  " routerLink="edit-category/{{category.id}}" ariaCurrentWhenActive="page"><i class="bi bi-pencil-square"></i> Modifier</a>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="delete(category.id, index)" alert="confirm('')"><i class="bi bi-trash"></i> Supprimer</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

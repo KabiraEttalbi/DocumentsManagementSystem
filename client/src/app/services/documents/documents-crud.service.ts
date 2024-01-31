@@ -1,5 +1,5 @@
+import { Document } from './../../data/Document';
 import { Injectable } from '@angular/core';
-import { Category } from "../data/Category";
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -7,22 +7,32 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 @Injectable({
   providedIn: 'root'
 })
-export class CrudService {
+export class DocumentsCrudService {
 
-  RestAPI: string = 'http://127.0.0.1:8000/api/v1/categories';
+  RestAPI: string = 'http://127.0.0.1:8000/api/v1/documents';
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) { }
 
-  addCategory(data: Category): Observable<any> {
+  addDocument(data: Document): Observable<any> {
     return this.httpClient.post(this.RestAPI , data).pipe(catchError(this.handleError));
   }
 
-  getCategories() {
-    return this.httpClient.get(this.RestAPI);
+  downloadDocument(id: number, fileName: string) {
+    return this.httpClient.get(`${this.RestAPI}/${id}/download`, { responseType: 'blob' });
   }
 
-  getCategory(id: any): Observable<any> {
+  getDocuments() {
+    return this.httpClient.get(this.RestAPI).pipe(
+      map((response: any) => response.data),
+      catchError((error: any) => {
+        console.error('Error fetching documents', error);
+        throw error;
+      })
+    );
+  }
+
+  getDocument(id: any): Observable<any> {
     let APIUrl = `${this.RestAPI}/${id}`
     return this.httpClient.get(APIUrl, {headers: this.httpHeaders})
     .pipe(map((res: any) => {
@@ -32,13 +42,13 @@ export class CrudService {
     );
   }
 
-  updateCategory(id: any,data: Category): Observable<any> {
+  updateDocument(id: any,data: Document): Observable<any> {
     let APIUrl = `${this.RestAPI}/${id}`
     return this.httpClient.put(APIUrl, data, {headers: this.httpHeaders})
     .pipe(catchError(this.handleError));
   }
 
-  deleteCategory(id: any): Observable<any> {
+  deleteDocument(id: any): Observable<any> {
     let APIUrl = `${this.RestAPI}/${id}`
     return this.httpClient.delete(APIUrl, {headers: this.httpHeaders})
     .pipe(catchError(this.handleError));
@@ -54,5 +64,4 @@ export class CrudService {
     console.log(errorMessage);
     return throwError(() => new Error(errorMessage));
   }
-
 }

@@ -1,7 +1,9 @@
+import { Category } from "./Category";
+
 export class Document {
   id!:number;
   name!: string;
   file!: string;
-  categoryId!:number;
+  category!:Category;
   visibility!:number;
 }

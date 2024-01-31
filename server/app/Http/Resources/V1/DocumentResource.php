@@ -18,7 +18,7 @@ class DocumentResource extends JsonResource
             'id' => $this -> id,
             'name' => $this -> name,
             'file' => $this -> file,
-            'categoryId' => $this -> category_id,
+            'category' => $this -> category,
             'visibility' => $this -> visibility
         ];
     }
